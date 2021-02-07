@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+  namespace :api do
+    namespace :v1 do
+      get 'posts', to: 'posts#index'
+      put 'posts', to: 'posts#create'
+      get '/posts/:id', to: 'posts#show'
+      post '/posts/:id', to: 'posts#update'
+
+      get '/users/:id', to: 'users#show'
+      put 'users', to: 'users#create'
+    end
+  end
 
   root 'application#main'
+  devise_for :users
+
   get '/*path', to: 'application#main'
+  match 'api/*unmatched', to: 'api#route_not_found', via: :all
 end

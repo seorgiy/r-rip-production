@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Current API:
+  get 'posts', to: 'posts#index'
+  put 'posts', to: 'posts#create'
+  get '/posts/:id', to: 'posts#show'
+  post '/posts/:id', to: 'posts#update'
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  get '/users/:id', to: 'users#show'
+  put 'users', to: 'users#create'
