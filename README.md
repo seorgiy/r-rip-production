@@ -1,10 +1,10 @@
 # README
 
-Current API:
-  get 'posts', to: 'posts#index'
-  put 'posts', to: 'posts#create'
-  get '/posts/:id', to: 'posts#show'
-  post '/posts/:id', to: 'posts#update'
+Current API:<br>
+  get 'posts', to: 'posts#index'<br>
+  put 'posts', to: 'posts#create'<br>
+  get '/posts/:id', to: 'posts#show'<br>
+  post '/posts/:id', to: 'posts#update'<br>
 
-  get '/users/:id', to: 'users#show'
-  put 'users', to: 'users#create'
+  get '/users/:id', to: 'users#show'<br>
+  put 'users', to: 'users#create'<br>
