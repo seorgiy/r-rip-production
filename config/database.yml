@@ -84,6 +84,4 @@ production:
   database: riprocket
   host: localhost
   username: ripprodacc
-  password: yaPerevedu900RubleyNaKiwiKoshelyok
-    #Rails.application.credentials.secret_key_base
-  # yaPerevedu900RubleyNaKiwiKoshelyok
+  password: <%= Rails.application.credentials[:secret_key_base] %>
