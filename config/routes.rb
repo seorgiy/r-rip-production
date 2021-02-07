@@ -20,9 +20,9 @@ Rails.application.routes.draw do
     get 'posts/:id/approve', to: 'posts#approve'
   end
 
-  root 'application#main'
+  root 'application#index'
   devise_for :users
 
-  get '/*path', to: 'application#main'
+  # get '/*path', to: 'application#index'
   match 'api/*unmatched', to: 'api#route_not_found', via: :all
 end

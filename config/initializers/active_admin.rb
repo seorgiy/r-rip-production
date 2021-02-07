@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "ЭТО БОЕВАЯ АДМИНКА"
+  config.site_title = "Rocket Rip"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -239,11 +239,11 @@ ActiveAdmin.setup do |config|
   #
   # If you wanted to add a static menu item to the default menu provided:
   #
-    # config.namespace :admin do |admin|
-    #   admin.build_menu :default do |menu|
-    #     menu.add label: "Модерация", url: "/admin/posts", html_options: { target: :blank }
-    #   end
-    # end
+  #   config.namespace :admin do |admin|
+  #     admin.build_menu :default do |menu|
+  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
+  #     end
+  #   end
 
   # == Download Links
   #
@@ -317,7 +317,7 @@ ActiveAdmin.setup do |config|
   # By default, the footer shows the current Active Admin version. You can
   # override the content of the footer here.
   #
-  # config.footer = 'Захуячено во имся высшего добра v1.0'
+  # config.footer = 'my custom footer text'
 
   # == Sorting
   #
@@ -331,5 +331,5 @@ ActiveAdmin.setup do |config|
   # By default, Active Admin uses Sprocket's asset pipeline.
   # You can switch to using Webpacker here.
   #
-  # config.use_webpacker = true
+  config.use_webpacker = true
 end
