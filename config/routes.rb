@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  ActiveAdmin.routes(self)
   namespace :api do
     namespace :v1 do
       get 'posts', to: 'posts#index'
@@ -10,6 +13,11 @@ Rails.application.routes.draw do
       get '/users/:id', to: 'users#show'
       put 'users', to: 'users#create'
     end
+  end
+
+  namespace :admin do
+    get 'posts', to: 'posts#index'
+    get 'posts/:id/approve', to: 'posts#approve'
   end
 
   root 'application#main'
