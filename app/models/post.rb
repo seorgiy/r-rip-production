@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :user, foreign_key: :author, optional: true
+  belongs_to :user, optional: true, foreign_key: :author
+  belongs_to :admin_user, optional: true, foreign_key: :moderator
   validates :text, presence: true
 end

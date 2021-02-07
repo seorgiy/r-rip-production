@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: rocket_rip_production
-  username: rocket_rip
-  password: <%= ENV['ROCKET_RIP_DATABASE_PASSWORD'] %>
+  database: postgres
+  username: ripprodacc
+  password: <%= ENV['RIPPRODACC_DATABASE_PASSWORD'] %>

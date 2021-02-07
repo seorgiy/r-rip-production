@@ -4,8 +4,6 @@ import App from '../app.vue'
 import router from '../router'
 
 Vue.use(TurbolinksAdapter)
-console.log('hello')
-console.log(router)
 
 document.addEventListener('turbolinks:load', () => {
   new Vue({
