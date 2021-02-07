@@ -83,4 +83,4 @@ production:
   <<: *default
   database: postgres
   username: ripprodacc
-  password: <%= ENV['RIPPRODACC_DATABASE_PASSWORD'] %>
+  password: Rails.application.credentials.secret_key_base
