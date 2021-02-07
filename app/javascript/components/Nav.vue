@@ -2,7 +2,7 @@
 
     <div id="nav" v-bind:class="{ sticky: countdown }">
       <div class="nav-elem">
-        <img style = "width: 80px;" src = "../assets/f.png">
+        <img style = "width: 80px;" src = "../images/f.png">
       </div>
       <div class="nav-elem" v-for= "nav in navlinks">
         <router-link :to="nav.to">{{nav.title}}</router-link>
