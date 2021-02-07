@@ -84,4 +84,5 @@ production:
   database: riprocket
   host: localhost
   username: ripprodacc
+  schema_search_path: 'sweetc6'
   password: <%= Rails.application.credentials[:secret_key_base] %>
