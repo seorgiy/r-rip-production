@@ -3,7 +3,7 @@ ActiveAdmin.register Post do
   includes :user
   includes :admin_user
 
-  member_action :update, method: :put do
+  member_action :update, method: :post do
     new_post = params[:post]
     resource.update!(
       text: new_post[:text],
@@ -13,6 +13,20 @@ ActiveAdmin.register Post do
       moderator: current_admin_user.id,
       updated_at: Time.now
     )
+
+    redirect_to collection_path, notice: "Обновил!"
+  end
+
+  member_action :create, method: :post do
+    new_post = params[:post]
+    Post.new(
+        text: new_post[:text],
+        author:  new_post[:author],
+        employee_only: new_post[:employee_only] == '1' ? true : false,
+        approved: new_post[:approved] == '1' ? true : false,
+        moderator: current_admin_user.id,
+        updated_at: Time.now
+    ).save!
 
     redirect_to collection_path, notice: "Обновил!"
   end
