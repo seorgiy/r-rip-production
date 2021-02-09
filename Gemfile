@@ -25,6 +25,7 @@ gem 'devise'
 gem 'jsonapi-rails'
 gem 'rexml'
 gem 'activeadmin'
+gem 'rack-cors'
 
 
 # Use Active Storage variant

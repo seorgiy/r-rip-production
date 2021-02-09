@@ -1,6 +1,11 @@
   class ApiController < ApplicationController
     protect_from_forgery with: :null_session
 
+    def api_request?
+      p 'апиха'
+     p request
+    end
+
     rescue_from ActiveRecord::RecordNotFound do |e|
       render_json_error :not_found, e.class.to_s, e.message
     end
