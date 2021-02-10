@@ -2,7 +2,9 @@ module Api
   module V1
     class PostsController < ApiController
       def index
-        render jsonapi: Post.all, include: [:author],
+        page = params[:page].to_i
+        posts = Post.approved.offset(20*(page)).limit(20)
+        render jsonapi: posts, include: [:author],
         fields: { posts: [:text] }, class: { Post: Api::V1::SerializablePost }
       end
 
