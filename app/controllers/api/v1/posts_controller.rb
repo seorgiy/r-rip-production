@@ -3,7 +3,7 @@ module Api
     class PostsController < ApiController
       def index
         page = params[:page].to_i
-        posts = Post.approved.offset(20*(page)).limit(20)
+        posts = Post.approved.offset(20*(page)).limit(20).order(created_at: :desc)
         render jsonapi: posts, include: [:author],
         fields: { posts: [:text] }, class: { Post: Api::V1::SerializablePost }
       end
