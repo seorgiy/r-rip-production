@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  constraints(port: "1488") do
+  # constraints(port: "1488") do
 
   ActiveAdmin.routes(self)
   namespace :api do
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
         get 'posts', to: 'posts#index'
         get 'posts/:id/approve', to: 'posts#approve'
     end
-  end
+  # end
 
   root 'application#index'
   devise_for :users
