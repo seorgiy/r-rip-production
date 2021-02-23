@@ -14,6 +14,11 @@ Rails.application.routes.draw do
 
       get '/users/:id', to: 'users#show'
       put 'users', to: 'users#create'
+
+      get 'artifacts', to: 'artifacts#index'
+      put 'artifacts', to: 'artifacts#create'
+      get '/artifacts/:id', to: 'artifacts#show'
+      post '/artifacts/:id', to: 'artifacts#update'
     end
   end
 
