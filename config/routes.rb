@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-
-  # constraints(port: "1488") do
-
+  devise_for :users
   ActiveAdmin.routes(self)
+
   namespace :api do
     namespace :v1 do
       get 'posts', to: 'posts#index'
@@ -18,19 +17,14 @@ Rails.application.routes.draw do
       get 'artifacts', to: 'artifacts#index'
       put 'artifacts', to: 'artifacts#create'
       get '/artifacts/:id', to: 'artifacts#show'
-      post '/artifacts/:id', to: 'artifacts#update'
     end
   end
 
-    namespace :admin do
-        get 'posts', to: 'posts#index'
-        get 'posts/:id/approve', to: 'posts#approve'
-    end
-  # end
+  namespace :admin do
+      get 'posts', to: 'posts#index'
+      get 'posts/:id/approve', to: 'posts#approve'
+  end
 
-  root 'application#index'
-  devise_for :users
-
-  # get '/*path', to: 'application#index'
   match 'api/*unmatched', to: 'api#route_not_found', via: :all
+  get '/', to: 'application#index'
 end
