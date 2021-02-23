@@ -6,6 +6,7 @@ ActiveAdmin.register Post do
   member_action :update, method: :post do
     new_post = params[:post]
     resource.update!(
+      signature: new_post[:signature],
       text: new_post[:text],
       author:  new_post[:author],
       employee_only: new_post[:employee_only] == '1' ? true : false,
@@ -20,6 +21,7 @@ ActiveAdmin.register Post do
   member_action :create, method: :post do
     new_post = params[:post]
     Post.new(
+        signature: new_post[:signature],
         text: new_post[:text],
         author:  new_post[:author],
         employee_only: new_post[:employee_only] == '1' ? true : false,
@@ -43,7 +45,7 @@ ActiveAdmin.register Post do
     selectable_column
     column :id
     column :text
-    column :author do |post| post.user&.email end
+    column :signature do |post| post.get_author end
     column :employee_only
     column :approved
     column :moderator do |post| post.admin_user&.email end
@@ -57,8 +59,4 @@ ActiveAdmin.register Post do
 
 
   end
-
-
-  # permit_params :text, :author
-  # everything happens here :D
 end
