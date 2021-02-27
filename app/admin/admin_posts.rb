@@ -12,6 +12,7 @@ ActiveAdmin.register Post do
       employee_only: new_post[:employee_only] == '1' ? true : false,
       approved: new_post[:approved] == '1' ? true : false,
       moderator: current_admin_user.id,
+      attachments: params[:attachments],
       updated_at: Time.now
     )
 
@@ -27,6 +28,7 @@ ActiveAdmin.register Post do
         employee_only: new_post[:employee_only] == '1' ? true : false,
         approved: new_post[:approved] == '1' ? true : false,
         moderator: current_admin_user.id,
+        attachments: params[:attachments],
         updated_at: Time.now
     ).save!
 
@@ -51,6 +53,7 @@ ActiveAdmin.register Post do
     column :moderator do |post| post.admin_user&.email end
     column :created_at
     column :updated_at
+    column :attachments
     column :published_at
 
     actions do |post|
