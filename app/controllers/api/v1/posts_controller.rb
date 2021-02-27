@@ -13,7 +13,7 @@ module Api
       end
 
       def create
-        post = Post.new(text: params[:text], signature: params[:signature], author: params[:author])
+        post = Post.new(text: params[:text], signature: params[:signature], author: params[:author], attachments: params[:attachments])
         post.save!
 
         render jsonapi: post, include: [:author],
