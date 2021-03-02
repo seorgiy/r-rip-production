@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user, optional: true, foreign_key: :author
   belongs_to :admin_user, optional: true, foreign_key: :moderator
   validates :text, presence: true
-  validate :attachments, :is_json?
+  validate :is_json?
 
   scope :approved, -> { where(approved: true) }
 
@@ -11,6 +11,7 @@ class Post < ApplicationRecord
   end
 
   def is_json?
+    return true unless self.attachments.present?
     raise JSON::ParserError.new "Attachments must be array of json" unless JSON.parse(self.attachments).class == Array
   end
 end
