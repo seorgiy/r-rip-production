@@ -22,7 +22,7 @@ module Api
 
       def update
         post = Post.find(params[:id])
-        post.update!(text: params[:text], signature: params[:signature], author: params[:author])
+        post.update!(text: params[:text], signature: params[:signature], author: params[:author], attachments: params[:attachments])
 
         render jsonapi: post, include: [:author],
         fields: { posts: [:text] }, class: { Post: Api::V1::SerializablePost }
