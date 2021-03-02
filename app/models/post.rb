@@ -11,6 +11,6 @@ class Post < ApplicationRecord
   end
 
   def is_json?
-    !!JSON.parse(self.attachments)
+    JSON.parse(self.attachments).class == Array
   end
 end
