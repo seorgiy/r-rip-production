@@ -8,3 +8,7 @@ Current API:<br>
 
   get '/users/:id', to: 'users#show'<br>
   put 'users', to: 'users#create'<br>
+
+  get 'artifacts', to: 'artifacts#index'<br>
+  put 'artifacts', to: 'artifacts#create'<br>
+  get '/artifacts/:id', to: 'artifacts#show'<br>
