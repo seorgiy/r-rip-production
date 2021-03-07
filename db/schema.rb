@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_181436) do
+ActiveRecord::Schema.define(version: 2021_03_07_222947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,8 +71,6 @@ ActiveRecord::Schema.define(version: 2021_03_02_181436) do
 
   create_table "artifacts", force: :cascade do |t|
     t.string "type"
-    t.uuid "public_url"
-    t.uuid "s3_url"
     t.text "title"
     t.text "description"
     t.json "additional"

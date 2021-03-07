@@ -3,7 +3,7 @@ module Api
     class ArtifactsController < ApiController
       def index
         page = params[:page].to_i
-        artifacts = Artifact.offset(20*(page)).limit(20).order(created_at: :desc)
+        artifacts = Artifact.with_attached_attachment.offset(20*(page)).limit(20).order(created_at: :desc)
         render jsonapi: artifacts, class: { Artifact: Api::V1::SerializableArtifact }
       end
 
@@ -20,7 +20,7 @@ module Api
       private
 
       def artifact_params
-        params.permit(:title, :public_url, :s3_url, :description,:additional)
+        params.permit(:title, :attachment, :description, :additional)
       end
     end
   end
