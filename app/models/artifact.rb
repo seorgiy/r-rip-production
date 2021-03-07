@@ -1,6 +1,6 @@
 class Artifact < ApplicationRecord
   validate :is_json?
-  has_one_attached :attachment
+  has_one_attached :attachment, dependent: :destroy
 
   protected
 
