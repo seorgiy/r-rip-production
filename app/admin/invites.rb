@@ -6,12 +6,12 @@ ActiveAdmin.register Invite do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :name, :email, :tg
+   permit_params :name, :email, :tg
   #
   # or
   #
   # permit_params do
-  #   permitted = [:name, :email, :tg]
+  #  permitted = [:name, :email, :tg]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
