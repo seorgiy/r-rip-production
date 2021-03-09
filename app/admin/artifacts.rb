@@ -7,6 +7,7 @@ ActiveAdmin.register Artifact do
       input :title, label: 'Заголовок'
       input :description, label: 'Описание'
       input :additional, label: 'Жсончик'
+      input :category, label: 'Категория', as: :select, :collection => Artifact.possible_categories.compact, include_blank: false
       input :attachment, as: :file, label: 'Файлик на s3'
     end
     f.actions
@@ -17,6 +18,7 @@ ActiveAdmin.register Artifact do
       row :title
       row :description
       row :additional
+      row :category
       row :url do link_to('amazon_url', artifact.url) end
       row :created_at
       row :updated_at
@@ -29,7 +31,7 @@ ActiveAdmin.register Artifact do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :description, :additional, :attachment
+  permit_params :title, :description, :additional, :attachment, :category
   #
   # or
   #

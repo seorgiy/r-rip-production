@@ -20,7 +20,7 @@ module Api
       private
 
       def artifact_params
-        params.permit(:title, :attachment, :description, :additional)
+        params.permit(:title, :attachment, :description, :additional, :category)
       end
     end
   end
