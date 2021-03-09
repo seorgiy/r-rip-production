@@ -11,10 +11,19 @@ ru:
       admin_user: 'Админ'
   active_admin:
     collections:
+      artifacts:
+        name: 'Музей'
+        title: 'Музей'
       posts:
         name: 'Посты'
         title: 'Посты'
     resources:
+      artifact:
+        title: 'Артефакт'
+        model_name: 'Артефакт'
+        new_model: 'Добавить артефакт'
+        edit_model: 'Изменить артефакт'
+        delete_model: 'Удалить артефакт'
       post:
         title: 'Пост'
         model_name: 'Пост'
