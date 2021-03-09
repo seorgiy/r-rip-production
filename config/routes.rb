@@ -11,6 +11,10 @@ Rails.application.routes.draw do
       get '/posts/:id', to: 'posts#show'
       post '/posts/:id', to: 'posts#update'
 
+      get 'invites', to: 'invites#index'
+      get '/invites/:id', to: 'invites#show'
+      put 'invites', to: 'invites#create'
+
       get '/users/:id', to: 'users#show'
       put 'users', to: 'users#create'
 
