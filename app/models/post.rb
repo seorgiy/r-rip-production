@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user, optional: true, foreign_key: :author
   belongs_to :admin_user, optional: true, foreign_key: :moderator
-  validates :text, presence: true
+  validates :text, presence: { message: "без текста низзя" }
   validate :is_json?
 
   scope :approved, -> { where(approved: true) }
