@@ -6,7 +6,9 @@
     end
 
     rescue_from ActiveRecord::RecordInvalid do |e|
-      render_json_error :unprocessable_entity , e.class.to_s, e.message
+      errors =  e.record.errors.messages
+      errors = errors.map { |error| error.last.join(', ')}
+      render_json_error :unprocessable_entity , e.class.to_s, errors.join(', ').capitalize
     end
 
     rescue_from JSON::ParserError do |e|

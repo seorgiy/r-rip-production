@@ -4,6 +4,16 @@ ru:
       long: "%d.%m.%Y, %H:%M"
       short: "%H:%m"
   activerecord:
+    errors:
+      models:
+        invite:
+          attributes:
+            name:
+              blank: "напиши имя"
+            tg:
+              blank: "напиши телегу"
+            email:
+              invalid: "укажи адекватную почту"
     models:
       post: 'Пост'
       user: 'Пользователь'

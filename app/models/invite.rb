@@ -1,4 +1,5 @@
 class Invite < ApplicationRecord
-  validates :email, presence: true, uniqueness: true, email: true
-  validates :name, :tg, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :name, presence: true
+  validates :tg, presence: true
 end
