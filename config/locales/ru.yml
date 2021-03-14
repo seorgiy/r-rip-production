@@ -1,7 +1,7 @@
 ru:
   time:
     formats:
-      long: "%d.%m.%Y, %H:%m"
+      long: "%d.%m.%Y, %H:%M"
       short: "%H:%m"
   activerecord:
     models:

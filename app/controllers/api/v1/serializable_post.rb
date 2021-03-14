@@ -3,7 +3,7 @@ class Api::V1::SerializablePost < JSONAPI::Serializable::Resource
   attributes :text, :created_at, :published_at, :updated_at, :attachments
 
   attribute :attachments do
-    JSON.parse(@object.attachments) unless @object.attachments.nil?
+    JSON.parse(@object.attachments) unless @object.attachments.blank?
   end
 
   attribute :signature do

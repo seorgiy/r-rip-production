@@ -11,7 +11,7 @@ class Post < ApplicationRecord
   end
 
   def is_json?
-    return true unless self.attachments.present?
+    return true if self.attachments.blank?
     raise JSON::ParserError.new "Attachments must be array of json" unless JSON.parse(self.attachments).class == Array
   end
 end

@@ -25,6 +25,7 @@ gem 'devise'
 gem 'jsonapi-rails'
 gem 'rexml'
 gem 'activeadmin'
+gem 'active_admin_datetimepicker'
 gem 'rack-cors'
 
 
