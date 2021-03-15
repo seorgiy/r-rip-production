@@ -20,6 +20,9 @@ ActiveAdmin.register Artifact do
       row :additional
       row :category
       row :url do link_to('amazon_url', artifact.url) end
+      row :preview do |ad|
+        image_tag ad.preview
+      end
       row :created_at
       row :updated_at
     end

@@ -6,6 +6,10 @@ class Artifact < ApplicationRecord
     self.attachment.url
   end
 
+  def preview
+    self.attachment.preview(resize_to_limit: [800,800]).processed.url if self.attachment&.blob&.content_type == "video/mp4"
+  end
+
   def self.possible_categories
     %w(video ad post photo)
   end
