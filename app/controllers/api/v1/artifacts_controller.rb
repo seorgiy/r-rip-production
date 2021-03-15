@@ -3,7 +3,13 @@ module Api
     class ArtifactsController < ApiController
       def index
         page = params[:page].to_i
-        artifacts = Artifact.with_attached_attachment.offset(20*(page)).limit(20).order(created_at: :desc)
+        artifacts =
+          if params[:category].present?
+            Artifact.where(category: params[:category]).with_attached_attachment.offset(20*(page)).limit(20).order(created_at: :desc)
+          else
+            Artifact.with_attached_attachment.offset(20*(page)).limit(20).order(created_at: :desc)
+          end
+
         render jsonapi: artifacts, class: { Artifact: Api::V1::SerializableArtifact }
       end
 
