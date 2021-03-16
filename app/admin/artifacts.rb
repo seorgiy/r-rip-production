@@ -9,6 +9,7 @@ ActiveAdmin.register Artifact do
       input :additional, label: 'Жсончик'
       input :category, label: 'Категория', as: :select, :collection => Artifact.possible_categories.compact, include_blank: false
       input :attachment, as: :file, label: 'Файлик на s3'
+      input :manual_preview, as: :file, label: 'Превьюха'
     end
     f.actions
   end
@@ -34,7 +35,7 @@ ActiveAdmin.register Artifact do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :title, :description, :additional, :attachment, :category
+  permit_params :title, :description, :additional, :attachment, :manual_preview, :category
   #
   # or
   #

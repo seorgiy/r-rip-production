@@ -1,13 +1,14 @@
 class Artifact < ApplicationRecord
   validate :is_json?, :valid_category
   has_one_attached :attachment, dependent: :destroy
+  has_one_attached :manual_preview, dependent: :destroy
 
   def url
     self.attachment.url
   end
 
   def preview
-    return self.force_preview if self.force_preview.present?
+    return self.manual_preview.variant(resize_to_limit: [800,800]).processed.url if self.manual_preview.attached?
     self.attachment.preview(resize_to_limit: [800,800]).processed.url if self.attachment&.blob&.content_type == "video/mp4"
   end
 
