@@ -7,6 +7,7 @@ class Artifact < ApplicationRecord
   end
 
   def preview
+    return self.force_preview if self.force_preview.present?
     self.attachment.preview(resize_to_limit: [800,800]).processed.url if self.attachment&.blob&.content_type == "video/mp4"
   end
 
