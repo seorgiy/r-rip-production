@@ -31,7 +31,6 @@ ActiveAdmin.register Post do
     column :employee_only
     column :approved
     column :moderator do |post| post.admin_user&.email end
-    column :created_at
     column :updated_at
     column :attachments
     column :published_at, as: :string
