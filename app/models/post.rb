@@ -6,6 +6,10 @@ class Post < ApplicationRecord
 
   scope :approved, -> { where(approved: true) }
 
+  before_save do
+    self.published_at = Time.current if self.published_at.blank?
+  end
+
   def get_author
    self.user.present? ? self.user.email : self.signature
   end
