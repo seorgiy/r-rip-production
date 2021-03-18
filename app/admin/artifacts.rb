@@ -22,7 +22,7 @@ ActiveAdmin.register Artifact do
       row :category
       row :url do link_to('amazon_url', artifact.url) end
       row :preview do |ad|
-        image_tag ad.preview if ad.category == 'video' || ad.category == 'photo'
+        image_tag ad.preview if %w(video photo ad).include?(ad.category)
       end
       row :audio do |ad| audio_tag ad.url, controls: true if ad.category == 'sound' end
       row :created_at
