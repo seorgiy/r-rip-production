@@ -23,26 +23,13 @@ ActiveAdmin.register Artifact do
       row :url do link_to('amazon_url', artifact.url) end
       row :preview do |ad|
         image_tag ad.preview if ad.category == 'video' || ad.category == 'photo'
-        audio_tag ad.url, controls: true if ad.category == 'sound'
       end
+      row :audio do |ad| audio_tag ad.url, controls: true if ad.category == 'sound' end
       row :created_at
       row :updated_at
     end
     active_admin_comments
   end
 
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
   permit_params :title, :description, :additional, :attachment, :manual_preview, :category
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:type, :title, :description, :additional]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
 end
