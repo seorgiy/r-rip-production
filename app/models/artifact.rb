@@ -13,7 +13,7 @@ class Artifact < ApplicationRecord
   end
 
   def self.possible_categories
-    %w(video ad post photo)
+    %w(video ad post photo sound joke)
   end
 
   protected
