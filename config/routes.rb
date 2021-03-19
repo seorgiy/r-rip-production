@@ -11,6 +11,8 @@ Rails.application.routes.draw do
       get '/posts/:id', to: 'posts#show'
       post '/posts/:id', to: 'posts#update'
 
+      put 'feedbacks', to: 'feedbacks#create'
+
       get 'invites', to: 'invites#index'
       get '/invites/:id', to: 'invites#show'
       put 'invites', to: 'invites#create'
