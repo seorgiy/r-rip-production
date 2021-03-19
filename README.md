@@ -12,3 +12,9 @@ Current API:<br>
   get 'artifacts', to: 'artifacts#index'<br>
   put 'artifacts', to: 'artifacts#create'<br>
   get '/artifacts/:id', to: 'artifacts#show'<br>
+  put 'feedbacks', to: 'feedbacks#create'<br>
+
+  get 'invites', to: 'invites#index'<br>
+  get '/invites/:id', to: 'invites#show'<br>
+  put 'invites', to: 'invites#create'<br>
+
