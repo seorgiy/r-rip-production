@@ -6,6 +6,12 @@ ru:
   activerecord:
     errors:
       models:
+        feedback:
+          attributes:
+            author:
+              blank: "оставь контакт"
+            osoboe_mnenie:
+              blank: "а сказать-то чего хотел?"
         invite:
           attributes:
             name:
