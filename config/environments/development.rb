@@ -10,7 +10,7 @@ Rails.application.configure do
   Rack::MiniProfiler.config.start_hidden = true
   # Do not eager load code on boot.
   config.eager_load = false
-
+  config.hosts << "lvh.me"
   # Show full error reports.
   config.consider_all_requests_local = true
 

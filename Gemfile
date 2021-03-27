@@ -21,12 +21,16 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'devise'
+
 gem 'jsonapi-rails'
 gem 'rexml'
 gem 'activeadmin'
 gem 'active_admin_datetimepicker'
 gem 'rack-cors'
+gem 'devise', github: 'heartcombo/devise'
+gem 'omniauth'
+#gem 'omniauth-oauth2', '~> 1.7', '>= 1.7.1'
+gem 'omniauth-telegram', '~> 0.1.0'
 
 
 # Use Active Storage variant
