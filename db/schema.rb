@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_212700) do
+ActiveRecord::Schema.define(version: 2021_03_30_204340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 2021_03_27_212700) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "provider"
     t.string "provider_id"
+    t.string "tg_username"
+    t.boolean "big_boss", default: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
@@ -94,6 +96,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_212700) do
     t.string "tg"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "approved"
   end
 
   create_table "posts", force: :cascade do |t|
