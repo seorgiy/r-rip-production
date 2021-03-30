@@ -17,7 +17,7 @@ class AdminUser < ApplicationRecord
       return admin_user unless admin_user.nil?
 
       admin_user = self.new(provider: auth.provider, provider_id: auth.uid, tg_username: auth.info.nickname)
-      admin_user.errors.add(:tg_username, "Мы такого не приглашали") unless Invite.approved.map(&:tg).include?(admin_user.tg_username)
+      admin_user.errors.add(:tg_username, "Мы такого не приглашали") unless Invite.approved.map(&:tg).include?(admin_user.tg_username.downcase)
       p admin_user.errors
       p admin_user.valid?
       admin_user.save if admin_user.valid?
