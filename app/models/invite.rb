@@ -5,6 +5,7 @@ class Invite < ApplicationRecord
 
   before_save do
     self.tg = self.tg.sub("@", "")
+    self.tg.downcase!
   end
 
   scope :approved, -> { where(approved: true) }
