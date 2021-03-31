@@ -34,5 +34,5 @@ Rails.application.routes.draw do
   end
 
   match 'api/*unmatched', to: 'api#route_not_found', via: :all
-  get '/', to: 'application#index'
+  get '/', to: 'admin/dashboard#index'
 end
