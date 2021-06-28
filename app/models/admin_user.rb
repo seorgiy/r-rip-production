@@ -34,6 +34,6 @@ class AdminUser < ApplicationRecord
 
   def check_invite
     p 'валидирую'
-    errors.add(:tg_username, "Мы такого не приглашали") if Invite.approved.where(tg: self.tg_username.downcase).empty?
+    errors.add(:tg_username, "Мы такого не приглашали") if Invite.approved.where(tg: self.tg_username&.downcase).empty? && ENV['RAILS_ENV'] != 'development'
   end
 end

@@ -1,0 +1,2 @@
+class AdminRating < ApplicationRecord
+end
