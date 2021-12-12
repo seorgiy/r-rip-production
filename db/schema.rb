@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_06_28_165846) do
-=======
-ActiveRecord::Schema.define(version: 2021_03_30_204340) do
->>>>>>> bfd52c1955338b1621b2afef43539ba129fb7ac0
+ActiveRecord::Schema.define(version: 2021_12_12_155556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +64,9 @@ ActiveRecord::Schema.define(version: 2021_03_30_204340) do
     t.datetime "post_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "owner_id"
+    t.string "owner_type"
+    t.integer "ticket_id"
   end
 
   create_table "admin_users", force: :cascade do |t|

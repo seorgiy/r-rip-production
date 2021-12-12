@@ -1,17 +1,10 @@
 ActiveAdmin.register AdminRating do
+  active_admin_import validate: false,
+  template: 'import' ,
+  template_object: ActiveAdminImport::Model.new(
+      hint: "you can configure CSV options",
+      csv_options: { col_sep: ";", row_sep: nil, quote_char: nil }
+  )
   menu label: "Оценки"
-  # See permitted parameters documentation:
-  # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # Uncomment all parameters which should be permitted for assignment
-  #
-  # permit_params :felix_admin_id, :rate, :comment, :post_date
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:felix_admin_id, :rate, :comment, :post_date]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+
 end

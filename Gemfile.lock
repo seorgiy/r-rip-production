@@ -54,6 +54,11 @@ GEM
       activeadmin (>= 1.1, < 3.a)
       coffee-rails
       xdan-datetimepicker-rails (~> 2.5.4)
+    active_admin_import (5.0.0)
+      activeadmin (>= 1.0.0)
+      activerecord-import (>= 0.27)
+      rchardet (>= 1.6)
+      rubyzip (>= 1.2)
     activeadmin (2.9.0)
       arbre (~> 1.2, >= 1.2.1)
       formtastic (>= 3.1, < 5.0)
@@ -71,6 +76,8 @@ GEM
     activerecord (6.1.3.1)
       activemodel (= 6.1.3.1)
       activesupport (= 6.1.3.1)
+    activerecord-import (1.2.0)
+      activerecord (>= 3.2)
     activestorage (6.1.3.1)
       actionpack (= 6.1.3.1)
       activejob (= 6.1.3.1)
@@ -250,6 +257,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rchardet (1.8.0)
     regexp_parser (2.1.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -313,6 +321,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_admin_datetimepicker
+  active_admin_import
   activeadmin
   aws-sdk-s3
   bootsnap (>= 1.4.4)
@@ -340,7 +349,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 3.0.1p64
 
 BUNDLED WITH
-   2.2.3
+   2.2.15
